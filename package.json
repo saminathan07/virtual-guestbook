@@ -1,0 +1,11 @@
+{
+  "name": "virtual-guestbook",
+  "version": "1.0.0",
+  "description": "A virtual guestbook application",
+  "type": "module",
+  "devDependencies": {
+    "@netlify/functions": "^2.0.0",
+    "@netlify/blobs": "^7.0.0",
+    "typescript": "^5.0.0"
+  }
+}

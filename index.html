@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Guestbook</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <span class="sparkle-icon">✨</span>
+                <h1 class="header-title">CELEBRATE WITH US</h1>
+            </div>
+            <button class="close-btn" onclick="window.close()">✕</button>
+        </div>
+    </header>
+
+    <!-- Main Title -->
+    <div class="main-title-section">
+        <h2 class="main-title">Virtual Guestbook</h2>
+        <p class="subtitle">Every message is a gift. Share your favorite memories, heartfelt stories, and best wishes for the year ahead!</p>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-bar">
+        <button class="filter-btn">
+            <span class="filter-icon">▼</span> Filter
+        </button>
+        <button class="write-wish-btn" onclick="openWishModal()">
+            <span class="pen-icon">✎</span> Write a Wish
+        </button>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="loading-state" style="text-align: center; padding: 40px; display: none;">
+        <p>Loading wishes...</p>
+    </div>
+
+    <!-- Wishes Grid -->
+    <div class="wishes-container" id="wishesContainer">
+        <!-- Wishes will be loaded dynamically -->
+    </div>
+
+    <!-- Write Wish Modal -->
+    <div class="modal" id="wishModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Ready to add yours?</h3>
+                <button class="modal-close" onclick="closeWishModal()">✕</button>
+            </div>
+            <form id="wishForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" name="name" placeholder="e.g. Alex Johnson" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Wish</label>
+                    <textarea name="message" placeholder="Write something heartfelt..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="file-upload-label">
+                        <input type="file" name="photo" accept="image/*,video/*" id="photoInput">
+                        <span class="upload-icon">📷</span>
+                        <span>Add a photo (Optional)</span>
+                    </label>
+                    <div id="fileName" class="file-name"></div>
+                </div>
+                <button type="submit" class="submit-btn">Post My Wish</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
